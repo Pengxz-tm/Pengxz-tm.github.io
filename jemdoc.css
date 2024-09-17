@@ -8,7 +8,7 @@ table#tlayout {
 }
 
 body {
-	background: white;
+	/*background: white;*/
 	font-family: Georgia, serif;
 	padding-bottom: 8px;
 	margin: 0;
@@ -22,6 +22,7 @@ body {
 	padding-right: 8px;
 	font-size: 1.0em;
 	width: auto;
+	height: 770px;
 	white-space: nowrap;
     text-align: left;
     vertical-align: top;
