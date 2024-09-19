@@ -1,20 +1,18 @@
 //交通流量
 var data = {
     id: 'multipleBarsLines',
-    legendBar: ['高速公路', '城镇公路'],
+    legendBar: ['长江学者', '中科院院士'],
     symbol: ' ', //数值是否带百分号        --默认为空 ''
-    legendLine: ['环比', '同比'],
-    xAxis: ['2014', '2015', '2016', '2017', '2018',
-        '2019'
-    ],
+    // legendLine: ['环比', '同比'],
+    xAxis: ['自然科学', '工程技术', '社会科学', '人文学科'],
     yAxis: [
-        [8, 10, 10, 11, 4, 13],
-        [10, 7, 8, 8, 7, 9]
+        [495, 627, 260, 168],
+        [276, 106, 0, 0]
     ],
-    lines: [
-        [10, 10, 9, 11, 7, 4],
-        [6, 12, 12, 2, 4, 4]
-    ],
+    // lines: [
+    //     [10, 10, 9, 11, 7, 4],
+    //     [6, 12, 12, 2, 4, 4]
+    // ],
     barColor: ['#009883', '#e66922'], //柱子颜色 必填参数
     lineColor: ['#fd6665', '#fba73b'], // 折线颜色
 
@@ -22,9 +20,9 @@ var data = {
 
 var myData = (function test() {
     let yAxis = data.yAxis || []
-    let lines = data.lines || []
+    // let lines = data.lines || []
     let legendBar = data.legendBar || []
-    let legendLine = data.legendLine || []
+    // let legendLine = data.legendLine || []
     var symbol = data.symbol || ' '
     let seriesArr = []
     let legendArr = []
@@ -63,33 +61,33 @@ var myData = (function test() {
         })
     })
 
-    lines && lines.forEach((item, index) => {
-        legendArr.push({
-            name: legendLine && legendLine.length > 0 && legendLine[index]
-        })
-        seriesArr.push({
-            name: legendLine && legendLine.length > 0 && legendLine[index],
-            type: 'line',
-            data: item,
-            itemStyle: {
-                normal: {
-                    color: data.lineColor[index],
-                    lineStyle: {
-                        width: 2,//折线宽度
-                        type: 'solid',
-                    }
-                }
-            },
-            label: {
-                normal: {
-                    show: false, //折线上方label控制显示隐藏
-                    position: 'top',
-                }
-            },
-            symbol: 'circle',
-            symbolSize: 5
-        })
-    })
+    // lines && lines.forEach((item, index) => {
+    //     legendArr.push({
+    //         name: legendLine && legendLine.length > 0 && legendLine[index]
+    //     })
+    //     seriesArr.push({
+    //         name: legendLine && legendLine.length > 0 && legendLine[index],
+    //         type: 'line',
+    //         data: item,
+    //         itemStyle: {
+    //             normal: {
+    //                 color: data.lineColor[index],
+    //                 lineStyle: {
+    //                     width: 2,//折线宽度
+    //                     type: 'solid',
+    //                 }
+    //             }
+    //         },
+    //         label: {
+    //             normal: {
+    //                 show: false, //折线上方label控制显示隐藏
+    //                 position: 'top',
+    //             }
+    //         },
+    //         symbol: 'circle',
+    //         symbolSize: 5
+    //     })
+    // })
 
     return {
         seriesArr,
@@ -113,7 +111,7 @@ option1 = {
                 if (i.data == 'null' || i.data == null) {
                     str += i.seriesName + '：无数据' + '<br/>'
                 } else {
-                    str += i.seriesName + '：' + i.data + symbol + '%<br/>'
+                    str += i.seriesName + '：' + i.data + '人<br/>'
                 }
 
             }
@@ -148,7 +146,7 @@ option1 = {
         type: 'category',
         data: data.xAxis,
         axisTick: {
-            show: false,
+            show: true,
         },
 
         axisLine: {
@@ -156,62 +154,62 @@ option1 = {
         },
         axisLabel: {       //轴标
             show: true,
-            interval: '0',
+            interval: '-1',
             textStyle: {
                 lineHeight:5,
-                padding: [2, 2, 0, 2],
+                padding: [0, 2, 0, 2],
                 height: 50,
                 fontSize: 12,
                 color:'#fff',
             },
-            rich: {
-                Sunny: {
-                    height: 50,
-                    // width: 60,
-                    padding: [0, 5, 0, 5],
-                    align: 'center',
-                },
-            },
-            formatter: function(params, index) {
-                var newParamsName = "";
-                var splitNumber = 5;
-                var paramsNameNumber = params && params.length;
-                if (paramsNameNumber && paramsNameNumber <= 4) {
-                    splitNumber = 4;
-                } else if (paramsNameNumber >= 5 && paramsNameNumber <= 7) {
-                    splitNumber = 4;
-                } else if (paramsNameNumber >= 8 && paramsNameNumber <= 9) {
-                    splitNumber = 5;
-                } else if (paramsNameNumber >= 10 && paramsNameNumber <= 14) {
-                    splitNumber = 5;
-                } else {
-                    params = params && params.slice(0, 15);
-                }
-
-                var provideNumber = splitNumber; //一行显示几个字
-                var rowNumber = Math.ceil(paramsNameNumber / provideNumber) || 0;
-                if (paramsNameNumber > provideNumber) {
-                    for (var p = 0; p < rowNumber; p++) {
-                        var tempStr = "";
-                        var start = p * provideNumber;
-                        var end = start + provideNumber;
-                        if (p == rowNumber - 1) {
-                            tempStr = params.substring(start, paramsNameNumber);
-                        } else {
-                            tempStr = params.substring(start, end) + "\n";
-                        }
-                        newParamsName += tempStr;
-                    }
-
-                } else {
-                    newParamsName = params;
-                }
-                params = newParamsName
-                return '{Sunny|' + params + '}';
-            },
+            // rich: {
+            //     Sunny: {
+            //         height: 50,
+            //         // width: 60,
+            //         padding: [0, 5, 0, 5],
+            //         align: 'center',
+            //     },
+            // },
+            // formatter: function(params, index) {
+            //     var newParamsName = "";
+            //     var splitNumber = 5;
+            //     var paramsNameNumber = params && params.length;
+            //     if (paramsNameNumber && paramsNameNumber <= 4) {
+            //         splitNumber = 4;
+            //     } else if (paramsNameNumber >= 5 && paramsNameNumber <= 7) {
+            //         splitNumber = 4;
+            //     } else if (paramsNameNumber >= 8 && paramsNameNumber <= 9) {
+            //         splitNumber = 5;
+            //     } else if (paramsNameNumber >= 10 && paramsNameNumber <= 14) {
+            //         splitNumber = 5;
+            //     } else {
+            //         params = params && params.slice(0, 15);
+            //     }
+            //
+            //     var provideNumber = splitNumber; //一行显示几个字
+            //     var rowNumber = Math.ceil(paramsNameNumber / provideNumber) || 0;
+            //     if (paramsNameNumber > provideNumber) {
+            //         for (var p = 0; p < rowNumber; p++) {
+            //             var tempStr = "";
+            //             var start = p * provideNumber;
+            //             var end = start + provideNumber;
+            //             if (p == rowNumber - 1) {
+            //                 tempStr = params.substring(start, paramsNameNumber);
+            //             } else {
+            //                 tempStr = params.substring(start, end) + "\n";
+            //             }
+            //             newParamsName += tempStr;
+            //         }
+            //
+            //     } else {
+            //         newParamsName = params;
+            //     }
+            //     params = newParamsName
+            //     return '{Sunny|' + params + '}';
+            // },
             color: '#687284',
         },
-
+        splitNumber: 4,
     },
     yAxis: {
         axisLine: {
@@ -221,7 +219,7 @@ option1 = {
             show: false
         },
         axisLabel: {
-            show: false
+            show: true
         },
         splitLine: {
             show: true,
@@ -253,7 +251,7 @@ option2 = {
         itemWidth: 14,
         itemHeight: 5,
         itemGap: 13,
-        data: ['小型车', '中型车', '大型车'],
+        data: ['长江学者', '中科院院士'],
         right: '10px',
         top: '0px',
         textStyle: {
@@ -280,7 +278,7 @@ option2 = {
                 color:'#fff',
             },
         },
-        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+        data: ['1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021']
     }],
     yAxis: [{
         type: 'value',
@@ -308,7 +306,7 @@ option2 = {
         }
     }],
     series: [{
-        name: '小型车',
+        name: '长江学者',
         type: 'line',
         smooth: true,
         lineStyle: {
@@ -334,9 +332,9 @@ option2 = {
                 color: 'rgb(137,189,27)'
             }
         },
-        data: [20,35,34,45,52,41,49,64,24,52.4,24,33]
+        data: [59,95,67,89,50,0,93,67,65,58,94,92,0,135,99,159,0,87,81,85,0,0,0,0]
     }, {
-        name: '中型车',
+        name: '中科院院士',
         type: 'line',
         smooth: true,
         lineStyle: {
@@ -362,35 +360,7 @@ option2 = {
                 color: 'rgb(0,136,212)'
             }
         },
-        data: [97.3,99.2,99.3,100.0,99.6,90.6,80.0,91.5,69.8,67.5,90.4,84.9]
-    }, {
-        name: '大型车',
-        type: 'line',
-        smooth: true,
-        lineStyle: {
-            normal: {
-                width: 2
-            }
-        },
-        areaStyle: {
-            normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                    offset: 0,
-                    color: 'rgba(219, 50, 51, 0.3)'
-                }, {
-                    offset: 0.8,
-                    color: 'rgba(219, 50, 51, 0)'
-                }], false),
-                shadowColor: 'rgba(0, 0, 0, 0.1)',
-                shadowBlur: 10
-            }
-        },
-        itemStyle: {
-            normal: {
-                color: 'rgb(219,50,51)'
-            }
-        },
-        data: [84.2,81.0,67.5,62.1,43.7,68.5,51.9,71.8,76.7,67.6,62.9,0]
+        data: [0,46,0,47,0,51,0,45,0,24,0,20,0,32,0,50,0,12,0,5,0,49,0,1]
     }, ]
 };
 //////////////////////交通工具流量 end
