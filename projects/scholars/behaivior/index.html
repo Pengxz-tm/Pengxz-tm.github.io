@@ -20,8 +20,8 @@
 <!--界面样式-->
 
 <script src="../js/china.js"></script>
-<script src="../js/chartMap.js"></script>
-<script src="../js/visual.js"></script>
+<!--<script src="../js/chartMap.js"></script>-->
+<!--<script src="../js/visual.js"></script>-->
 <script type="text/javascript" src="../js/test-1280.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/visual.css">
 
@@ -55,41 +55,49 @@
 		<div class="visual_left">
 			<div class="visual_box">
 				<div class="visual_title">
-					<span>学科分布</span>
+					<span style="font-size: 14px;">研究方向学科分布</span>
 					<img src="../images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="main1">
-					
+				<div class="swiper-container visual_swiper11 visual_chart">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"  id="main1"></div>
+						<div class="swiper-slide"  id="main11"></div>
+						<div class="swiper-slide"  id="main111"></div>
+					</div>
 				</div>
 			</div>
 			<div class="visual_box">
 				<div class="visual_title">
-					<span>当选时间分布</span>
+					<span style="font-size: 14px;">合作行为学科分布</span>
 					<img src="../images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="main2">
-					
+				<div class="swiper-container visual_swiper22 visual_chart">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"  id="main2"></div>
+						<div class="swiper-slide"  id="main22"></div>
+						<div class="swiper-slide"  id="main222"></div>
+					</div>
 				</div>
 			</div>
 			<div class="visual_box">
 				<div class="visual_title">
-					<span>学术能力分布</span>
+					<span>学者年龄分布</span>
 					<img src="../images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="main22">
+				<div class="swiper-container visual_swiper33 visual_chart">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"  id="main3"></div>
+						<div class="swiper-slide"  id="main33"></div>
+					</div>
 				</div>
-<!--				<div class="visual_chart sfzcll">-->
-<!--					<p>測試</p>-->
-<!--					<div id="main22">-->
-<!--				</div>-->
 			</div>
 		</div>
 		<div class="visual_con">
 			<div class="visual_conTop">
 				<div class="visual_conTop_box visual_conTop1">
 					<div>
-						<h3>学者人数</h3>
-						<p>1675</p>
+						<h3>自然科学</h3>
+						<p>643<a style="font-size: 16px;">&nbsp;人</a></p>
 <!--						<div class="conTop_smil">-->
 <!--							<a class="sz">长江学者:<span>+3%</span><i class="fa fa-long-arrow-up"></i></a>-->
 <!--							<a class="xd">院士:<span>-2%</span><i class="fa fa-long-arrow-down"></i></a>-->
@@ -98,8 +106,8 @@
 				</div>
 				<div class="visual_conTop_box visual_conTop2">
 					<div>
-						<h3>文献数量</h3>
-						<p>503798</p>
+						<h3>工程技术</h3>
+						<p>640<a style="font-size: 16px;">&nbsp;人</a></p>
 <!--						<div class="conTop_smil">-->
 <!--							<a class="">缓行</a>-->
 <!--							<a class="">平均车速<span>120</span>KM/H</i></a>-->
@@ -108,8 +116,8 @@
 				</div>
 				<div class="visual_conTop_box visual_conTop1">
 					<div>
-						<h3>机构数量</h3>
-						<p>6346</p>
+						<h3>社会科学</h3>
+						<p>234<a style="font-size: 16px;">&nbsp;人</a></p>
 <!--						<div class="conTop_smil">-->
 <!--							<a class="sz">日环比:<span>+3%</span><i class="fa fa-long-arrow-up"></i></a>-->
 <!--							<a class="xd">周环比:<span>-2%</span><i class="fa fa-long-arrow-down"></i></a>-->
@@ -118,8 +126,8 @@
 				</div>
 				<div class="visual_conTop_box visual_conTop2">
 					<div>
-						<h3>科研项目</h3>
-						<p>13870</p>
+						<h3>人文学科</h3>
+						<p>150<a style="font-size: 16px;">&nbsp;人</a></p>
 <!--						<div class="conTop_smil">-->
 <!--							<a class="null">null</a>-->
 <!--							<a class="xd">月环比:<span>-2%</span><i class="fa fa-long-arrow-down"></i></a>-->
@@ -134,24 +142,22 @@
 				<img class="visual_conBot_3" src="../images/ksh44.png">
 				<img class="visual_conBot_4" src="../images/ksh45.png">
 				<div class="visual_chart_text">
-					<h1>流动迁徙+大数据</h1>
-					<h2>职位变迁大数据分析平台</h2>
+					<h1>科研行为+大数据</h1>
+					<h2>科研行为变化模式组合</h2>
 				</div>
-				<div class="visual_chart" id="main8"></div>
-				<div class="visual_conBot_bot" style="height: 220px;">
-					<div class="visualSssf_left">
-						<h3>流动行为</h3>
-						<a class="map1" style="display:block;width: 200px;">关键时间阶段</a>
-						<a class="map1" style="width: 250px;">Ⅰ-本科毕业 → Ⅱ-初始发表文献</a>
-						<a class="map1" style="width: 250px;">Ⅱ-初始发表文献 → Ⅲ-取得最高学位</a>
-						<a class="map1" style="width: 250px;">Ⅲ-取得最高学位 → Ⅳ-初次工作</a>
-						<a class="map1" style="width: 250px;">Ⅳ-初次工作 → Ⅴ-当选科技人才</a>
-						<a class="active map1" style="width: 250px;">Ⅴ-当选科技人才 → -Ⅵ-2024年</a>
+				<div class="visual_chart" id="main4"></div>
+				<div class="visual_conBot_bot" style="height: 160px;">
+					<div class="visualSssf_left" style="width: 30%;padding: 20px 0px 0px 20px;">
+						<h3>科研行为</h3>
+						<a class="map1 active">研究广度</a>
+						<a class="map1">合作广度</a>
+						<a class="map1">研究深度</a>
+						<a class="map1">合作深度</a>
+						<a class="map1">JS散度</a>
+						<a class="map1">C指数</a>
 					</div>
-					<div class="visualSssf_right">
-						<div class="visualSssf_right_box" id="main5"></div>
-						<div class="visualSssf_right_box" id="main6"></div>
-						<div class="visualSssf_right_box" id="main7"></div>
+					<div class="visualSssf_right" style="width: 70%;">
+						<div class="visualSssf_right_box" id="main5" style="width: 100%;"></div>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -160,24 +166,28 @@
 		<div class="visual_right">
 			<div class="visual_box">
 				<div class="visual_title">
-					<span>研究方向分布</span>
+					<span style="font-size: 12px;">研究方向当选时间分布</span>
 					<img src="../images/ksh33.png">
 				</div>
-				<div class="swiper-container visual_swiper1 visual_chart">
+				<div class="swiper-container visual_swiper66 visual_chart">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide"  id="main3"></div>
-						<div class="swiper-slide"  id="main31"></div>
-						<div class="swiper-slide"  id="main32"></div>
+						<div class="swiper-slide"  id="main6"></div>
+						<div class="swiper-slide"  id="main66"></div>
+						<div class="swiper-slide"  id="main666"></div>
 					</div>
 				</div>
 			</div>
 			<div class="visual_box visualSfzsfl">
 				<div class="visual_title">
-					<span>合作行为分布</span>
+					<span style="font-size: 12px;">合作行为当选时间分布</span>
 					<img src="../images/ksh33.png">
 				</div>
-				<div class="visual_chart" id="main9">
-					
+				<div class="swiper-container visual_swiper77 visual_chart">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"  id="main7"></div>
+						<div class="swiper-slide"  id="main77"></div>
+						<div class="swiper-slide"  id="main777"></div>
+					</div>
 				</div>
 			</div>
 			<div class="visual_box">
@@ -185,26 +195,23 @@
 					<span>奖励资助分布</span>
 					<img src="../images/ksh33.png">
 				</div>
-				<div class="swiper-container visual_swiper2 visual_chart">
+				<div class="swiper-container visual_swiper88 visual_chart">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide"  id="main101"></div>
-						<div class="swiper-slide"  id="main102"></div>
+						<div class="swiper-slide"  id="main8"></div>
+						<div class="swiper-slide"  id="main88"></div>
+						<div class="swiper-slide"  id="main888"></div>
+						<div class="swiper-slide"  id="main8888"></div>
 					</div>
 				</div>
-<!--				<div class="swiper-container visual_swiper2 visual_chart">-->
-<!--					<div class="swiper-wrapper">-->
-<!--						<div class="swiper-slide"  id="main4"></div>-->
-<!--						<div class="swiper-slide"  id="main41"></div>-->
-<!--					</div>-->
-<!--				</div>-->
 			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
-
+	<script src="../echarts/dist/extension/dataTool.js"></script>
+	<script src="../js/behaivior.js"></script>
 	<script type="text/javascript">
 
-		$(function(){
+	$(function(){
 			var a=$('.visualSssf_left a')
 			for(var i=0;i<a.length;i++){
 				a[i].index=i;
@@ -228,6 +235,7 @@
     		}
     		,1100);
 		})
+
 	$(".map1").click(function () {
 		map1(this.innerText)
 	})
@@ -235,58 +243,81 @@
 	//交通流量
 	var myChart1 = echarts.init(document.getElementById('main1'));
     myChart1.setOption(option1);
-	//交通工具流量
+    var myChart11 = echarts.init(document.getElementById('main11'));
+    myChart11.setOption(option11);
+    var myChart111 = echarts.init(document.getElementById('main111'));
+    myChart111.setOption(option111);
+    var mySwiper11 = new Swiper('.visual_swiper11', {
+		autoplay: true,//可选选项，自动滑动
+		direction : 'horizontal',//可选选项，滑动方向
+		speed:2000,//可选选项，滑动速度
+	})
+
 	var myChart2 = echarts.init(document.getElementById('main2'));
     myChart2.setOption(option2);
-    //交通工具流量1
-	var myChart22 = echarts.init(document.getElementById('main22'));
+    var myChart22 = echarts.init(document.getElementById('main22'));
     myChart22.setOption(option22);
-    //本月发生事件
+    var myChart222 = echarts.init(document.getElementById('main222'));
+    myChart222.setOption(option222);
+	var mySwiper22 = new Swiper('.visual_swiper22', {
+		autoplay: true,//可选选项，自动滑动
+		direction : 'horizontal',//可选选项，滑动方向
+		speed:2000,//可选选项，滑动速度
+	})
+
 	var myChart3 = echarts.init(document.getElementById('main3'));
     myChart3.setOption(option3);
-    var myChart31 = echarts.init(document.getElementById('main31'));
-    myChart31.setOption(option31);
-    var myChart32 = echarts.init(document.getElementById('main32'));
-    myChart32.setOption(option32);
-    var mySwiper1 = new Swiper('.visual_swiper1', {
+    var myChart33 = echarts.init(document.getElementById('main33'));
+    myChart33.setOption(option33);
+    var mySwiper33 = new Swiper('.visual_swiper33', {
 		autoplay: true,//可选选项，自动滑动
-		speed:800,//可选选项，滑动速度
-		autoplay: {
-		    delay: 5000,//1秒切换一次
-		  },
+		direction : 'horizontal',//可选选项，滑动方向
+		speed:2000,//可选选项，滑动速度
 	})
-    //收费站收费排行
-	var myChart4 = echarts.init(document.getElementById('main101'));
-    myChart4.setOption(option101);
-    var myChart41 = echarts.init(document.getElementById('main102'));
-    myChart41.setOption(option102);
-    // var myChart41 = echarts.init(document.getElementById('main41'));
-    // myChart41.setOption(option41);
-    // var mySwiper2 = new Swiper('.visual_swiper2', {
-	// 	autoplay: true,//可选选项，自动滑动
-	// 	direction : 'vertical',//可选选项，滑动方向
-	// 	speed:2000,//可选选项，滑动速度
-	// })
-	var mySwiper2 = new Swiper('.visual_swiper2', {
-		autoplay: true,//可选选项，自动滑动
-		speed:800,//可选选项，滑动速度
-		autoplay: {
-		    delay: 5000,//1秒切换一次
-		  },
-	})
-    //今日实时收费
-	var myChart5 = echarts.init(document.getElementById('main5'));
-    myChart5.setOption(option5);
-    var myChart6 = echarts.init(document.getElementById('main6'));
+
+	var myChart6 = echarts.init(document.getElementById('main6'));
     myChart6.setOption(option6);
-    var myChart7 = echarts.init(document.getElementById('main7'));
+    var myChart66 = echarts.init(document.getElementById('main66'));
+    myChart66.setOption(option66);
+    var myChart666 = echarts.init(document.getElementById('main666'));
+    myChart666.setOption(option666);
+    var mySwiper66 = new Swiper('.visual_swiper66', {
+		autoplay: true,//可选选项，自动滑动
+		direction : 'horizontal',//可选选项，滑动方向
+		speed:2000,//可选选项，滑动速度
+	})
+
+	var myChart7 = echarts.init(document.getElementById('main7'));
     myChart7.setOption(option7);
-    //中间地图
+    var myChart77= echarts.init(document.getElementById('main77'));
+    myChart77.setOption(option77);
+    var myChart777 = echarts.init(document.getElementById('main777'));
+    myChart777.setOption(option777);
+    var mySwiper77= new Swiper('.visual_swiper77', {
+		autoplay: true,//可选选项，自动滑动
+		direction : 'horizontal',//可选选项，滑动方向
+		speed:2000,//可选选项，滑动速度
+	})
+
 	var myChart8 = echarts.init(document.getElementById('main8'));
     myChart8.setOption(option8);
-    //收费站收费量
-	var myChart9 = echarts.init(document.getElementById('main9'));
-    myChart9.setOption(option99);
+    var myChart88 = echarts.init(document.getElementById('main88'));
+    myChart88.setOption(option88);
+    var myChart888 = echarts.init(document.getElementById('main888'));
+    myChart888.setOption(option888);
+    var myChart8888 = echarts.init(document.getElementById('main8888'));
+    myChart8888.setOption(option8888);
+    var mySwiper88= new Swiper('.visual_swiper88', {
+		autoplay: true,//可选选项，自动滑动
+		direction : 'horizontal',//可选选项，滑动方向
+		speed:2000,//可选选项，滑动速度
+	})
+
+	var myChart4 = echarts.init(document.getElementById('main4'));
+    myChart4.setOption(option4);
+
+    var myChart5 = echarts.init(document.getElementById('main5'));
+    myChart5.setOption(option5);
 	</script>
 </body>
 </html>
